@@ -1,8 +1,9 @@
 package com.digitalcreo.edabit.challenges.single;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class Quadratic {
@@ -56,44 +57,85 @@ public class Quadratic {
     }
 
     public static String flipEndChars(String s) {
-        if(s.length() >= 2 ){
+        if (s.length() >= 2) {
             char[] splits = s.toCharArray();
-            return (splits[splits.length-1] == splits[0]) ? "Two's a pair." : flipChar(splits);
-        }else{
+            return (splits[splits.length - 1] == splits[0]) ? "Two's a pair." : flipChar(splits);
+        } else {
             return "Incompatible.";
         }
     }
 
-    private static String flipChar(char[] splits){
+    private static String flipChar(char[] splits) {
         char inChar = splits[0];
-        splits[0] = splits[splits.length-1];
-        splits[splits.length-1] = inChar;
+        splits[0] = splits[splits.length - 1];
+        splits[splits.length - 1] = inChar;
         return String.valueOf(splits);
     }
 
     public static String[] dictionary(String s, String[] w) {
         return Arrays.stream(w)
-                     .filter(wr -> s.length() <= wr.length() && wr.substring(0, s.length()).equalsIgnoreCase(s))
-                    .collect(Collectors.toList()).toArray(new String[0]);
+                .filter(wr -> s.length() <= wr.length() && wr.substring(0, s.length()).equalsIgnoreCase(s))
+                .collect(Collectors.toList()).toArray(new String[0]);
     }
 
-    public static String[] dict(String s, String[] w) {
-        String[] result = new String[0];
-        return (s.length() > 0 && w.length > 0) ?
-             Arrays.stream(w).filter(wr -> s.length() < wr.length())
-                     .filter(wr -> wr.substring(0, s.length()).equalsIgnoreCase(s))
-                    .collect(Collectors.toList()).toArray(new String[0]) : result;
+    public boolean isInOrder(String str) {
+        boolean result = false;
+        char charArray[] = str.toCharArray();
+        Arrays.sort(charArray);
+        String newArray = String.valueOf(charArray);
+        if (newArray.equals(str)) result = true;
+        return result;
+    }
+
+    public int highestDigit(int n) {
+        int largest = 0;
+        while (n != 0) {
+            int r = n % 10;
+            // Find the largest digit
+            largest = Math.max(r, largest);
+            n = n / 10;
+        }
+        return largest;
+    }
+
+    public int numOfDigits(int num) {
+        return (String.valueOf(num).startsWith("+") || String.valueOf(num).startsWith("-")) ?
+                String.valueOf(num).length() - 1 : String.valueOf(num).length();
+    }
+
+    public double[] otherSides(int n) {
+        double[] result = new double[2];
+        BigDecimal bd1 = new BigDecimal(2 * n).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal bd2 = new BigDecimal(n * Math.sqrt(3)).setScale(2, RoundingMode.HALF_UP);
+        result[0] = bd1.doubleValue();
+        result[1] = bd2.doubleValue();
+        return result;
+    }
+
+    public int[] arrayOfMultiples(int num, int length) {
+        int count = 0;
+        int[] multiples = new int[length];
+        while(count < length){
+            multiples[count] = num * (count+1);
+            count++;
+        }
+        return multiples;
     }
 
     public static void main(String[] args) {
         Quadratic quadratic = new Quadratic();
-    //    quadratic.getQuadraticSolns(1, 0, 0);
-    //    System.out.println(">>>>>>>> Left Shift :" + quadratic.leftShift(10, 3));
-    //    Integer[] factors = quadratic.factorize(10);
-    //    System.out.println("Factors are :" + Arrays.toString(factors));
-    //    quadratic.warOfNumbers(new int[]{5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243});
-    //    System.out.println(quadratic.flipEndChars("a"));
-        String[] dic = quadratic.dictionary("there", new String[]{"there", "here", "everywhere"});
-        Arrays.stream(dic).forEach(System.out::println);
+        //    quadratic.getQuadraticSolns(1, 0, 0);
+        //    System.out.println(">>>>>>>> Left Shift :" + quadratic.leftShift(10, 3));
+        //    Integer[] factors = quadratic.factorize(10);
+        //    System.out.println("Factors are :" + Arrays.toString(factors));
+        //    quadratic.warOfNumbers(new int[]{5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243});
+        //    System.out.println(quadratic.flipEndChars("a"));
+       // String[] dic = quadratic.dictionary("there", new String[]{"there", "here", "everywhere"});
+       // Arrays.stream(dic).forEach(System.out::println);
+       // System.out.println(quadratic.isInOrder("aciis"));
+       // System.out.println(quadratic.highestDigit(2893));
+        double [] res = quadratic.otherSides(1);
+        Arrays.stream(res).forEach(System.out::println);
+        Arrays.stream(quadratic.arrayOfMultiples(5,6)).forEach(System.out::println);
     }
 }
