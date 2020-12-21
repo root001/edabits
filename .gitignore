@@ -1,0 +1,70 @@
+.metadata/*
+.recommenders/*
+lib/*
+<<<<<<< HEAD
+lib_eclipselink/*
+Servers/*
+shared_libs/*
+RemoteSystemsTempFiles/*
+datamigrator/*
+target/*
+.settings/*
+
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+=======
+out/*
+target/*
+.settings/*
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+>>>>>>> master
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+<<<<<<< HEAD
+.idea/*
+*.iws
+*.iml
+*.ipr
+out/*
+
+### NetBeans ###
+/nbproject/private/
+/build/
+=======
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+>>>>>>> master
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+<<<<<<< HEAD
+/.metadata/
+/.recommenders/
+local_application.properties
+=======
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+>>>>>>> master
