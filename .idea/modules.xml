@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/edabits.iml" filepath="$PROJECT_DIR$/edabits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edabits1.iml" filepath="$PROJECT_DIR$/edabits1.iml" />
     </modules>
   </component>
 </project>
