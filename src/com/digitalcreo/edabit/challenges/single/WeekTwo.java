@@ -64,6 +64,16 @@ public class WeekTwo {
         return newArr;
     }
 
+    public String gradePercentage(String userScore, String passScore){
+        String s = "";
+        if (Integer.parseInt(userScore.substring(0,userScore.length()-1)) >= Integer.parseInt(passScore.substring(0,passScore.length()-1))){
+            s += "PASSED";
+        }else{
+            s += "FAILED";
+        }
+        return "You " + s + " the Exam";
+    }
+
     // Hackerrank Starter Challenges
     public void scanner1() {
         Scanner scan = new Scanner(System.in);
@@ -87,6 +97,22 @@ public class WeekTwo {
         } else {
             return "Weird";
         }
+    }
+
+    public void scanner2(){
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        double d = scan.nextDouble();
+
+        scan.useDelimiter("\n");
+        String s = scan.next();
+        scan.close();
+
+        // Write your code here.
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
     }
 
 }

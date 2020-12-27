@@ -14,9 +14,11 @@ public class Runner {
     //    System.out.println(week2.euclidean(25,5));
     //    System.out.println(week2.sum(new int []{1, 2, 3, 4}) );
     //    System.out.println(week2.sum(new int []{-1, -1, -1}) );
-        Object [] obj = week2.clone(new Object[] {1, 2, 3});
-        Arrays.stream(obj).forEach(ob ->{
-            System.out.println("Object arr :"+ob.toString());
-        });
+    //    Object [] obj = week2.clone(new Object[] {1, 2, 3});
+    //    Arrays.stream(obj).forEach(ob ->{
+    //        System.out.println("Object arr :"+ob.toString());
+    //    });
+        week2.scanner2();
+    //    System.out.println(week2.gradePercentage("65%", "60%"));
     }
 }
