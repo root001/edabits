@@ -2,8 +2,14 @@ package com.digitalcreo.edabit.challenges.single;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Quadratic {
@@ -122,20 +128,4 @@ public class Quadratic {
         return multiples;
     }
 
-    public static void main(String[] args) {
-        Quadratic quadratic = new Quadratic();
-        //    quadratic.getQuadraticSolns(1, 0, 0);
-        //    System.out.println(">>>>>>>> Left Shift :" + quadratic.leftShift(10, 3));
-        //    Integer[] factors = quadratic.factorize(10);
-        //    System.out.println("Factors are :" + Arrays.toString(factors));
-        //    quadratic.warOfNumbers(new int[]{5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243});
-        //    System.out.println(quadratic.flipEndChars("a"));
-       // String[] dic = quadratic.dictionary("there", new String[]{"there", "here", "everywhere"});
-       // Arrays.stream(dic).forEach(System.out::println);
-       // System.out.println(quadratic.isInOrder("aciis"));
-       // System.out.println(quadratic.highestDigit(2893));
-        double [] res = quadratic.otherSides(1);
-        Arrays.stream(res).forEach(System.out::println);
-        Arrays.stream(quadratic.arrayOfMultiples(5,6)).forEach(System.out::println);
-    }
 }
